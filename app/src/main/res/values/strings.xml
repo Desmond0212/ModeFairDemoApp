@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ModeFairDemoApp</string>
+    <string name="title_activity_maps">ModeFairDemoApp</string>
+
+    <string name="map_activity_arrival_item_title">Calculating arrival time</string>
+    <string name="map_activity_delivery_description">Delivery to Work</string>
+    <string name="map_activity_order_number_title">Order #22452185</string>
+    <string name="map_activity_shop_location">7 Eleven Media City, Dubai</string>
+    <string name="map_activity_order_placed_title">Order placed</string>
+    <string name="map_activity_order_description">We\'re preparing your order</string>
+    <string name="map_activity_btn_help_title">Help</string>
+</resources>

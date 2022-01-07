@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".app.MapsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+        <RelativeLayout
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_oval_white"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:elevation="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_arrow_back_ios_new_black_20"
+                android:contentDescription="@null"
+                android:layout_margin="8dp"
+                map:tint="@color/lightGreen" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_corner_white_15dp"
+            android:elevation="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="15dp"
+            tools:ignore="RelativeOverlap">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/map_activity_btn_help_title"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="14sp"/>
+            
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutBottomContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/map"
+            android:background="@drawable/bg_rounded_top_corner_20dp"
+            android:layout_marginTop="-15dp">
+
+            <View
+                android:id="@+id/grayBarView"
+                android:layout_width="70dp"
+                android:layout_height="10dp"
+                android:background="@drawable/bg_rounded_corner_white_20dp"
+                android:backgroundTint="@color/lightGray"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/lblArrivalCalculationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/map_activity_arrival_item_title"
+                android:layout_below="@+id/grayBarView"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/lblDeliveryDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/map_activity_delivery_description"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/lightGrayBe"
+                android:layout_below="@+id/lblArrivalCalculationTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+                android:id="@+id/layoutProgressStatusBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/lblDeliveryDescription"
+                android:layout_marginTop="15dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_corner_white_20dp"
+                    android:backgroundTint="@color/lightGreen"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="20dp"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_corner_white_20dp"
+                    android:backgroundTint="@color/lightGray"
+                    android:layout_marginEnd="15dp"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_corner_white_20dp"
+                    android:backgroundTint="@color/lightGray"
+                    android:layout_marginEnd="15dp"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_corner_white_20dp"
+                    android:backgroundTint="@color/lightGray"
+                    android:layout_marginEnd="20dp"/>
+
+            </LinearLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/cardStackViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_below="@+id/layoutProgressStatusBar"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"/>
+
+            <View
+                android:id="@+id/layoutGrayDivider"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_below="@+id/cardStackViewPager"
+                android:background="@color/lightGray"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/lblOrderNumberTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/map_activity_order_number_title"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_below="@+id/layoutGrayDivider"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"/>
+
+            <TextView
+                android:id="@+id/lblShopLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/map_activity_shop_location"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/lightGrayBe"
+                android:layout_below="@+id/lblOrderNumberTitle"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewOrderItemList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblShopLocation"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
